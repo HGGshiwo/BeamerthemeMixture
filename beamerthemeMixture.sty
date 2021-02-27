@@ -1,0 +1,84 @@
+%设置字体
+\RequirePackage{graphicx}
+\RequirePackage{ctex}
+\RequirePackage{xcolor}
+\RequirePackage{float}
+\usefonttheme[onlymath]{serif}
+\let\songti\relax%定义
+\newCJKfontfamily\songti{SimSun}[AutoFakeBold]%重定义 songti
+%字体定义
+\setbeamerfont{title}{family=\heiti,size=\huge}
+\setbeamerfont{subtitle}{family=\kaishu,size=\huge}
+\setbeamerfont{section}{family=\songti,size=\Large}
+\setbeamerfont{subsection}{family=\songti,size=\large}
+\setbeamerfont{author}{family=\kaishu,size=\Large}
+\setbeamerfont{institute}{family=\heiti,size=\normalsize}
+\setbeamerfont{date}{family=\kaishu,size=\normalsize}
+\setbeamerfont{section in headline}{family=\kaishu,size=\footnotesize}
+\setbeamerfont{block title}{family=\songti,size=\Large,series=\bfseries}
+\setbeamerfont{block body}{family=\songti,size=\normalsize,series=\bfseries}
+\setbeamerfont{frametitle}{family=\songti,size=\LARGE,series=\bfseries}
+\setbeamerfont{itemize/enumerate body}{family=\songti,size=\normalsize,series=\bfseries}
+\setbeamerfont{tableofcontents}{family=\songti,size=\normalsize}
+\setbeamerfont{section in toc}{family=\songti,size=\LARGE,series=\bfseries}
+%颜色定义
+\definecolor{darkblue}{RGB}{10,80,152}
+\definecolor{deepblue}{RGB}{181,203,223}
+\definecolor{plainblue}{RGB}{228,235,245}
+\setbeamercolor{title}{fg=darkblue}
+\setbeamercolor{subtitle}{fg=black}
+\setbeamercolor{author}{fg=black}
+\setbeamercolor{institute}{fg=darkblue}
+\setbeamercolor{headline canvas}{fg=darkblue,bg=plainblue}
+\setbeamercolor{block body}{bg=plainblue}
+\setbeamercolor{block title}{fg=darkblue,bg=deepblue}
+\setbeamercolor{frametitle}{fg=darkblue!60!black}
+\setbeamercolor{alerted text}{fg=red!50!black}
+%titlepage
+\titlegraphic{\includegraphics[height=10ex]{ZJUBLUE.eps}}
+
+%block
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\newcommand{\mylogo}{\includegraphics[width=3ex]{logo1.eps}\hspace{1ex}}
+%item
+\setbeamertemplate{itemize/enumerate body}{
+	\usebeamerfont{itemize/enumerate body}
+}
+\setbeamertemplate{itemize items}{\color{blue!40!black}$\bullet$}
+\setbeamertemplate{enumearte items}{\color{blue!40!black}}
+
+\setbeamertemplate{title page}{
+	\vbox{
+		\begin{beamercolorbox}[dp=0.7ex,ht=2ex,wd=1\paperwidth,center]{titlepage}
+			\usebeamerfont{title}\inserttitle	
+		\end{beamercolorbox}
+		\ifx\insertsubtitle\@empty
+		\else	
+		\vspace{2ex}
+		\begin{beamercolorbox}[dp=0.7ex,ht=2ex,wd=1\paperwidth,center]{titlepage}
+			\usebeamerfont{subtitle}\insertsubtitle
+		\end{beamercolorbox}
+		\fi
+		\begin{figure}
+			\centering
+			\includegraphics[width=10ex]{ZJUBLUE.pdf}
+		\end{figure}
+		\ifx\insertauthor\@empty
+		\else	
+		\vspace{1ex}
+		\begin{beamercolorbox}[dp=0.7ex,ht=2ex,wd=1\paperwidth,center]{titlepage}
+			\usebeamerfont{author}\insertauthor
+		\end{beamercolorbox}
+		\fi
+		\ifx\insertinstitute\@empty
+		\else	
+		\vspace{4ex}
+		\begin{beamercolorbox}[dp=0.7ex,ht=2ex,wd=1\paperwidth,center]{titlepage}
+			\usebeamerfont{institute}\insertinstitute
+		\end{beamercolorbox}
+		\fi
+		\vspace{3ex}
+		\begin{beamercolorbox}[dp=0.7ex,ht=2ex,wd=1\paperwidth,center]{titlepage}
+			\insertdate
+		\end{beamercolorbox}
+}}
